@@ -31,28 +31,12 @@ MergeModificationIntensity(CSVPath = "1_Negative refined", run_RunMetaboAnalystR
 MergeModificationIntensity(CSVPath = "1_Positive refined", run_RunMetaboAnalystR = F)
 
 ### Step 3. Normalization
-# Normalization across each section (Not recommended!!!)
-NormalizationIntensitySections(MergeModificationIntensityFile = "1_Negative refined-merged.csv",
-                               SampleIndex = c("loxP1","loxP2","loxP3","KO1","KO2","KO3"),
-                               SectionIndex = c("-01","-02","-03","-04","-05","-06"))
-
-NormalizationIntensitySections(MergeModificationIntensityFile = "1_Positive refined-merged.csv",
-                               SampleIndex = c("loxP1","loxP2","loxP3","KO1","KO2","KO3"),
-                               SectionIndex = c("-01","-02","-03","-04","-05","-06"))
-
 # Normalization across each slide
 NormalizationIntensitySlides(MergeModificationIntensityFile = "1_Negative refined-merged.csv",
                              SectionIndex = c("-01","-02","-03","-04","-05","-06"))
 
 NormalizationIntensitySlides(MergeModificationIntensityFile = "1_Positive refined-merged.csv",
                              SectionIndex = c("-01","-02","-03","-04","-05","-06"))
-
-# Normalization using the percentage
-NormalizationIntensityPercentage(MergeModificationIntensityFile = "1_Negative refined-merged.csv",
-                                 ModificationReferenceFile = "./Modification_reference_Neg.csv")
-
-NormalizationIntensityPercentage(MergeModificationIntensityFile = "1_Positive refined-merged.csv",
-                                 ModificationReferenceFile = "./Modification_reference_Pos.csv")
 
 ### Step 4. Pick certain brain regions and modification types for analyses
 
